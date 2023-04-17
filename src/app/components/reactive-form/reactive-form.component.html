@@ -1,0 +1,82 @@
+<div class="container">
+    <h3>New User Reactive Form</h3>
+     <form [formGroup]="userForm" (ngSubmit)="submit()">
+      <div class="form-group">
+          <label for="name">name</label>
+          <input type="text" formControlName="name" class="form-control">
+          <div class="alert alert-danger" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+            <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required </p>
+            <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name must be atleast 6 characters long </p>
+            <p *ngIf="userForm.get('name')?.errors?.['pattern']">Name can only be a sachin </p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="userName">userName</label>
+          <input type="text" formControlName="username" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="text" formControlName="email" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="Phone">Phone</label>
+          <input type="text" formControlName="phone" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="website">website</label>
+          <input type="text" formControlName="website" class="form-control">
+      </div>
+ 
+      <fieldset formGroupName="address">
+        <legend>address</legend>        
+      <div class="form-group">
+        <label for="street">street</label>
+        <input type="text" formControlName="street" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Suite">Suite</label>
+        <input type="text" formControlName="Suite" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="city">city</label>
+        <input type="text" formControlName="city" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="zipcode">zipcode</label>
+        <input type="text" formControlName="zipcode" class="form-control">
+    </div>
+  
+
+   <fieldset formGroupName="geo">
+    <legend>Geo</legend>     
+    <div class="form-group">
+        <label for="lat">lat</label>
+        <input type="text" formControlName="lat" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="lng">lng</label>
+        <input type="text" formControlName="lng" class="form-control">
+    </div>
+   </fieldset>
+</fieldset>  
+   <fieldset formGroupName="company">
+    <legend>Company</legend>     
+    <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" formControlName="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="catchPhrase">Catch Phrase </label>
+        <input type="text" formControlName="catchphrase" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="bs">bs</label>
+        <input type="text" formControlName="bs" class="form-control">
+    </div>
+   </fieldset>
+
+
+      <button class="btn btn-primary">Submit</button>
+     </form>
+  </div>
+  

@@ -1,0 +1,16 @@
+<p>string-interpolation works!</p>
+
+<h1>{{message}} </h1>
+
+<p [innerText]="message"></p>
+<p [innerText]="message">{{message+' this is going to be overriden'}}</p>
+
+<h3>{{getMessage()}} method calling in the 
+    string interpolation is not recommended</h3>
+
+<h6>{{"value on the fly"}}</h6>
+
+<hr>
+<p>Property binding examples</p>
+<hr>
+<input type="text" [value]="message">

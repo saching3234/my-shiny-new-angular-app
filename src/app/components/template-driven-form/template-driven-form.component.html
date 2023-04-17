@@ -1,0 +1,105 @@
+<div class="container">
+  <h3>New user Form</h3>
+  <form #tempVar="ngForm" (ngSubmit)="submitForm(tempVar)">
+    <div class="form-group">
+        <label for="name">name</label>
+        <input required="" minlength="5" pattern="sachin" maxlength="30" type="text" name="name" class="form-control" ngModel #name="ngModel">
+        <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+            <p *ngIf="name.errors?.['required']">Name is required</p>
+            <p *ngIf="name.errors?.['minlength']">Name must be 8 char long</p>
+            <p *ngIf="name.errors?.['maxlength']">Name 30 max allowed</p>
+            <p *ngIf="name.errors?.['pattern']">Name must be sachin</p>
+        </div>
+    
+    </div>
+    <div class="form-group">
+        <label for="userName">User Name</label>
+        <input type="text" name="userName" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="Phone">Phone</label>
+        <input type="text" name="Phone" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="website">website</label>
+        <input type="text" name="website" class="form-control" ngModel>
+    </div>
+
+     <!-- using the ngModelGoup  for address-->
+     <div ngModelGroup="address">
+       <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" name="Street" class="form-control" ngModel >
+    </div>
+       <div class="form-group">
+        <label for="Suite">Suite</label>
+        <input type="text" name="Suite" class="form-control" ngModel >
+    </div>
+       <div class="form-group">
+        <label for="City">City</label>
+        <input type="text" name="City" class="form-control" ngModel >
+    </div>
+       <div class="form-group">
+        <label for="Zipcode">Zipcode</label>
+        <input type="text" name="Zipcode" class="form-control" ngModel >
+    </div>
+    <div ngModelGroup="geo">
+    <div class="form-group">
+        <label for="lat">Lat</label>
+        <input type="text" name="lat" class="form-control" ngModel >
+    </div>
+       <div class="form-group">
+        <label for="lng">Lng</label>
+        <input type="text" name="lng" class="form-control" ngModel >
+    </div>
+    </div>
+     </div>
+
+     <div ngModelGroup="company">
+       <div class="form-group">
+        <label for="name">Company Name</label>
+        <input type="text" name="name" class="form-control" ngModel>
+    </div>
+       <div class="form-group">
+        <label for="catchPhrase">catch Phrase</label>
+        <input type="text" name="catchPhrase" class="form-control" ngModel>
+    </div>
+       <div class="form-group">
+        <label for="bs">BS</label>
+        <input type="text" name="BS" class="form-control" ngModel>
+    </div>
+     </div>
+   
+     <div class="form-group">
+        <label for="gender" *ngFor="let gender of genders">
+         <input class="form-check-input" name="gender" [value]="gender" ngModel type="radio">
+          {{ gender }}  
+        </label>
+     </div>
+     <br>
+     <div class="form-group col-md-4">
+       <label for="commMode">Communication Options</label>
+       <select name="commMode" class="form-control" ngModel id="">
+        <!--First Blank-->
+        <option value=""></option>
+        <option *ngFor="let communicationMode of communicationModes" [value]="communicationMode" >{{communicationMode}}</option>
+       </select>
+
+     </div>
+     <div class="checkbox">
+        <label for="agreement">
+            <input name="agreement" ngModel type="checkbox"> I agree to the terms and condition
+        </label>
+     </div>
+
+    <hr>
+    <button class="btn btn-primary" name="name" [disabled]="tempVar.invalid">Submit</button>
+    
+    <pre>{{   tempVar.value | json}}</pre>        
+  
+  </form>
+</div>

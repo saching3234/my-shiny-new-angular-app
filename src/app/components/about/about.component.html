@@ -1,0 +1,50 @@
+<p>about works!</p>
+<!--
+ <p>Adding the my component in the about  compnent by using the selector name</p>
+
+<h3>String interpolation</h3>
+<h4>My Name is : {{myName}}</h4>
+<br>
+<div >
+    <p>Property binding=string interpolation+ boolean value</p>
+    <h1 [innerHTML]="myName"></h1>
+     <input type="text" value="is disabled property binding is used" [disabled]="isDis">
+    <br>
+     <input type="button" (click)="enableTextBox()" class="btn btn-primary my-5" value="click me to enable"> 
+
+
+     <p>Ng model used below with the text box </p>
+     <input type="text" [(ngModel)]="prop">
+    
+      <h3>{{prop}}</h3>
+    </div>
+
+    <p>ng if directive </p>
+    <ul>
+    <li *ngIf="students.length==0">No students present in the array</li>
+    <li *ngIf="students.length>0"> {{students.length}} students present in the array </li>
+    </ul>
+   
+
+    <p> ng for directive </p>
+    <ol>
+        <li *ngFor="let student of students">{{student}}</li>
+    </ol>
+
+    <p>Ng Switch case</p>
+    <ol [ngSwitch]="students.length">
+        <li *ngSwitchCase=0>No studnet present in   array</li>
+        <li *ngSwitch=1>One element present in the array</li>
+        <li *ngSwitch=2>Two element present in the browser</li>
+        <li *ngSwitchDefault>More than two students present in the array</li>
+    </ol>
+    <p>Ng style demo</p>
+    <h2 style="color:blueviolet">Normal style</h2>
+    <h1 [ngStyle]="{'color':colorName,'background':'yellow'}"> Ng style demo</h1>
+
+    <h4 [ngClass]="'text-primary'"> ng class directive</h4>
+ -->
+    <button (click)="getData()" class="btn btn-success">Get data</button>
+  <br><br>
+  
+  <button (click)="saveData()" class="btn btn-primary"> Save button</button>

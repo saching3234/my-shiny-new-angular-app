@@ -1,0 +1,20 @@
+<button class="btn btn-primary my-4 py-2" (click)="showList=!showList">Show Or Hide List</button>
+<hr>
+<div class="container" *ngIf="showList">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let message of messages; let i=index">
+         Index: {{i}}, Message: {{message}}
+        </li>
+    </ul>
+</div>
+
+<hr>
+<h4>Ng Switch</h4>
+<input type="text" class="form-control" [(ngModel)]="alertType"> <br>
+<div [ngSwitch]="alertType">
+<div *ngSwitchCase="'success'" class="alert alert-success" role="alert" >Welcome to my show</div>
+<div *ngSwitchCase="'info'" class="alert alert-info" role="alert" >Welcome to my show</div>
+<div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert" >Welcome to my show</div>
+<div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert" >Welcome to my show</div>
+<div *ngSwitchDefault class="alert alert-primary" role="alert" >Welcome to my show</div>
+</div>

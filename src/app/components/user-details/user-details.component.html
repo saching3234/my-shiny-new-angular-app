@@ -1,0 +1,23 @@
+<p>user-detail of selected user are</p>
+
+<h6 *ngIf="user">User Id:{{user.id}} <br>
+ User Name :{{user.name}} <br>
+ user name:{{user.username}} <br>
+ user email : {{user.email}}  <br>
+ user phone :{{user.phone}}
+</h6>
+
+<hr>
+<button class="btn btn-success" (click)="create()">Create</button>
+<button class="btn btn-primary" (click)="update()">Update</button>
+<button class="btn btn-danger" (click)="deleteUser()">Delete</button>
+<button class="btn btn-warning" (click)="getUserPosts()">Get Posts by User</button>
+<button class="btn btn-warning" (click)="showPosts()">Show Posts by User</button>
+<hr>
+<h2>User's post details</h2>
+
+    <pre *ngIf="posts">
+        {{posts  | json}}
+    </pre>
+
+

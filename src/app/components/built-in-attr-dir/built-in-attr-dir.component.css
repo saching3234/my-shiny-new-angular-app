@@ -1,0 +1,12 @@
+div{
+    height: 100px;
+    width: 200px;
+}
+
+.blue-gradient{
+    background: linear-gradient(to right, blue, lightblue);
+}
+
+.red-gradient{
+    background: linear-gradient(to right, red, rgb(65, 15, 44));
+}
